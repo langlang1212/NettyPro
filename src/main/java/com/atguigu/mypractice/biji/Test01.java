@@ -9,10 +9,12 @@ package com.atguigu.mypractice.biji;
  */
 public class Test01 {
     public static void main(String[] args) {
-        TestCond cond = new TestCond();
-        cond.setCode("10001");
-        TestCond1 cond1 = new TestCond1();
-        cond1.setName(cond.getName());
+        Cond cond = new Cond();
+        cond.setCode("1");
+        cond.setName("zhangsan");
+        TestCond cond1 = (TestCond) cond;
         System.out.println(cond1);
+
+
     }
 }

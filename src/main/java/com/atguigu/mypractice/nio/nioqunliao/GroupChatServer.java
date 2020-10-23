@@ -52,7 +52,7 @@ public class GroupChatServer {
 
                         if(key.isAcceptable()){ // 如果监听到连接事件
                             // 拿到客户端的SocketChannel
-                            SocketChannel socketChannel = (SocketChannel) key.channel();
+                            SocketChannel socketChannel = listenChannel.accept();
                             // 设置为非阻塞
                             socketChannel.configureBlocking(false);
                             // 把拿到的客户端channel注册到selector，并关注读取事件
@@ -111,7 +111,7 @@ public class GroupChatServer {
         Set<SelectionKey> keys = selector.keys();
         for(SelectionKey key : keys){
             // 通过key拿到对应的SocketChannel
-            Channel targetChannel = (SocketChannel) key.channel();
+            Channel targetChannel = key.channel();
             // 排除自己
             if(targetChannel instanceof SocketChannel && targetChannel != self){
                 // 转型

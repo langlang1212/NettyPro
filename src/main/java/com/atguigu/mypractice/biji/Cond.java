@@ -1,15 +1,13 @@
 package com.atguigu.mypractice.biji;
 
-import java.util.concurrent.locks.Condition;
-
 /**
  * @BelongsProject: NettyPro
  * @BelongsPackage: com.atguigu.mypractice.biji
  * @Author: zhanglang
- * @CreateTime: 2020-10-14 17:08
+ * @CreateTime: 2020-10-15 17:54
  * @Description:
  */
-public class TestCond extends Cond {
+public class Cond {
     private String code;
 
     private String name;
