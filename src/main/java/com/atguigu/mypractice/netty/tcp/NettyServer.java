@@ -6,6 +6,8 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
+import java.util.concurrent.ExecutionException;
+
 /**
  * @BelongsProject: NettyPro
  * @BelongsPackage: com.atguigu.mypractice.netty.tcp
@@ -14,7 +16,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  * @Description:
  */
 public class NettyServer {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException {
         // 创建BossGroup和WorkGroup
         // 创建bossGroup 负责连接请求，nThreads 代表线程数(NioEventLoop个数)
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
@@ -41,7 +43,7 @@ public class NettyServer {
         System.out.println("...服务器 is ready...");
 
         // 绑定一个端口并且同步,生成一个ChannelFuture对象
-            ChannelFuture cf = bootstrap.bind(6668).sync();
+            ChannelFuture cf = bootstrap.bind(6669).sync();
             cf.addListener(new ChannelFutureListener() {
                 @Override
                 public void operationComplete(ChannelFuture future) throws Exception {

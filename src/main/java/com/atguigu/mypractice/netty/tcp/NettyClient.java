@@ -34,7 +34,7 @@ public class NettyClient {
 
         // 连接服务端
 
-            ChannelFuture cf = bootstrap.connect("127.0.0.1",6668).sync();  // sync()的作用是连接过后才能结束线程
+            ChannelFuture cf = bootstrap.connect("127.0.0.1",6669).sync();  // sync()的作用是连接过后才能结束线程
             cf.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();

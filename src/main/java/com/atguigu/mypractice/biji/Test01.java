@@ -9,11 +9,19 @@ package com.atguigu.mypractice.biji;
  */
 public class Test01 {
     public static void main(String[] args) {
-        Cond cond = new Cond();
-        cond.setCode("1");
-        cond.setName("zhangsan");
-        TestCond cond1 = (TestCond) cond;
-        System.out.println(cond1);
+        String str1 = "微信公众号菜鸟名企梦\n干货多多";
+        System.out.println(str1);
+        System.out.println("----------------------------------------");
+
+        str1 =  "微信公众号菜鸟名企梦\r干货多多";
+        System.out.println(str1);
+        System.out.println("----------------------------------------");
+
+
+        str1 =  "微信公众号菜鸟名企梦\r\n干货多多";
+        System.out.println(str1);
+        System.out.println("----------------------------------------");
+
 
 
     }
